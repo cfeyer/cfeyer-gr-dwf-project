@@ -1,38 +1,22 @@
-<?xml version="1.0"?>
 <block>
-  <name>cfeyer_dwf_sink</name>
+  <name>Cfeyer dwf sink</name>
   <key>cfeyer_dwf_module_cfeyer_dwf_sink</key>
-  <category>cfeyer_dwf_module</category>
+  <category>CFEYER_DWF_MODULE</category>
   <import>import cfeyer_dwf_module</import>
   <make>cfeyer_dwf_module.cfeyer_dwf_sink($serial_number, $analog_out_channel_index)</make>
-  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
-       Sub-nodes:
-       * name
-       * key (makes the value accessible as $keyname, e.g. in the make node)
-       * type -->
   <param>
-    <name>...</name>
-    <key>...</key>
-    <type>...</type>
+    <name>Serial_number</name>
+    <key>serial_number</key>
+    <type>string</type>
   </param>
-
-  <!-- Make one 'sink' node per input. Sub-nodes:
-       * name (an identifier for the GUI)
-       * type
-       * vlen
-       * optional (set to 1 for optional inputs) -->
+  <param>
+    <name>Analog_out_channel_index</name>
+    <key>analog_out_channel_index</key>
+    <type>int</type>
+  </param>
   <sink>
     <name>in</name>
-    <type><!-- e.g. int, float, complex, byte, short, xxx_vector, ...--></type>
+    <type>raw</type>
+    <nports>CFEYER_DWF_SINK_MAX_IN</nports>
   </sink>
-
-  <!-- Make one 'source' node per output. Sub-nodes:
-       * name (an identifier for the GUI)
-       * type
-       * vlen
-       * optional (set to 1 for optional inputs) -->
-  <source>
-    <name>out</name>
-    <type><!-- e.g. int, float, complex, byte, short, xxx_vector, ...--></type>
-  </source>
 </block>
