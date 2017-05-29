@@ -16,7 +16,7 @@
   </param>
   <sink>
     <name>in</name>
-    <type>raw</type>
+    <type>float</type>
     <nports>1</nports>
   </sink>
 </block>
