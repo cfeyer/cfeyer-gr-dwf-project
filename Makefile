@@ -9,7 +9,10 @@ build/Makefile: build
 build:
 	mkdir build
 
-.PHONY: clean
+.PHONY: clean install
 
 clean:
 	rm -rf build
+
+install: all
+	make -C build install
