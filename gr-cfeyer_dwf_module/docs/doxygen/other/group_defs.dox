@@ -1,0 +1,7 @@
+/*!
+ * \defgroup block GNU Radio CFEYER_DWF_MODULE C++ Signal Processing Blocks
+ * \brief All C++ blocks that can be used from the CFEYER_DWF_MODULE GNU Radio
+ *        module are listed here or in the subcategories below.
+ *
+ */
+

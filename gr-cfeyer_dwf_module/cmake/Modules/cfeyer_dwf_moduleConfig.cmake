@@ -1,0 +1,30 @@
+INCLUDE(FindPkgConfig)
+PKG_CHECK_MODULES(PC_CFEYER_DWF_MODULE cfeyer_dwf_module)
+
+FIND_PATH(
+    CFEYER_DWF_MODULE_INCLUDE_DIRS
+    NAMES cfeyer_dwf_module/api.h
+    HINTS $ENV{CFEYER_DWF_MODULE_DIR}/include
+        ${PC_CFEYER_DWF_MODULE_INCLUDEDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/include
+          /usr/local/include
+          /usr/include
+)
+
+FIND_LIBRARY(
+    CFEYER_DWF_MODULE_LIBRARIES
+    NAMES gnuradio-cfeyer_dwf_module
+    HINTS $ENV{CFEYER_DWF_MODULE_DIR}/lib
+        ${PC_CFEYER_DWF_MODULE_LIBDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/lib
+          ${CMAKE_INSTALL_PREFIX}/lib64
+          /usr/local/lib
+          /usr/local/lib64
+          /usr/lib
+          /usr/lib64
+)
+
+INCLUDE(FindPackageHandleStandardArgs)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(CFEYER_DWF_MODULE DEFAULT_MSG CFEYER_DWF_MODULE_LIBRARIES CFEYER_DWF_MODULE_INCLUDE_DIRS)
+MARK_AS_ADVANCED(CFEYER_DWF_MODULE_LIBRARIES CFEYER_DWF_MODULE_INCLUDE_DIRS)
+
