@@ -26,6 +26,7 @@ include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 
 list(APPEND cfeyer_dwf_module_sources
+    cfeyer_dwf_sink_impl.cc
 )
 
 set(cfeyer_dwf_module_sources "${cfeyer_dwf_module_sources}" PARENT_SCOPE)
@@ -63,6 +64,7 @@ include_directories(${CPPUNIT_INCLUDE_DIRS})
 list(APPEND test_cfeyer_dwf_module_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/test_cfeyer_dwf_module.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/qa_cfeyer_dwf_module.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/qa_cfeyer_dwf_sink.cc
 )
 
 add_executable(test-cfeyer_dwf_module ${test_cfeyer_dwf_module_sources})

@@ -26,11 +26,13 @@
  */
 
 #include "qa_cfeyer_dwf_module.h"
+#include "qa_cfeyer_dwf_sink.h"
 
 CppUnit::TestSuite *
 qa_cfeyer_dwf_module::suite()
 {
   CppUnit::TestSuite *s = new CppUnit::TestSuite("cfeyer_dwf_module");
+  s->addTest(gr::cfeyer_dwf_module::qa_cfeyer_dwf_sink::suite());
 
   return s;
 }

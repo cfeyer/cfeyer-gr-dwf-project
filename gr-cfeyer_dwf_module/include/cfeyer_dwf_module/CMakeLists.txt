@@ -22,5 +22,5 @@
 ########################################################################
 install(FILES
     api.h
-    DESTINATION include/cfeyer_dwf_module
+    cfeyer_dwf_sink.h DESTINATION include/cfeyer_dwf_module
 )
