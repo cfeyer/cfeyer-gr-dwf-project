@@ -25,6 +25,10 @@
 #include <gnuradio/io_signature.h>
 #include "cfeyer_dwf_sink_impl.h"
 
+#define CFEYER_DWF_SINK_MIN_IN 1
+#define CFEYER_DWF_SINK_MAX_IN 1
+#define CFEYER_DWF_SINK_ITYPE  float
+
 namespace gr {
   namespace cfeyer_dwf_module {
 
@@ -40,7 +44,7 @@ namespace gr {
      */
     cfeyer_dwf_sink_impl::cfeyer_dwf_sink_impl(const std::string & serial_number, int analog_out_channel_index)
       : gr::sync_block("cfeyer_dwf_sink",
-              gr::io_signature::make(<+MIN_IN+>, <+MAX_IN+>, sizeof(<+ITYPE+>)),
+              gr::io_signature::make(CFEYER_DWF_SINK_MIN_IN, CFEYER_DWF_SINK_MAX_IN, sizeof(CFEYER_DWF_SINK_ITYPE)),
               gr::io_signature::make(0, 0, 0))
     {}
 
@@ -56,7 +60,7 @@ namespace gr {
         gr_vector_const_void_star &input_items,
         gr_vector_void_star &output_items)
     {
-      const <+ITYPE+> *in = (const <+ITYPE+> *) input_items[0];
+      const CFEYER_DWF_SINK_ITYPE *in = (const CFEYER_DWF_SINK_ITYPE *) input_items[0];
 
       // Do <+signal processing+>
 
