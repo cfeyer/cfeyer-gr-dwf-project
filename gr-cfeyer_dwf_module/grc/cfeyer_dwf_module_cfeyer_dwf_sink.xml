@@ -17,6 +17,6 @@
   <sink>
     <name>in</name>
     <type>raw</type>
-    <nports>CFEYER_DWF_SINK_MAX_IN</nports>
+    <nports>1</nports>
   </sink>
 </block>
